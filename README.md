@@ -4,7 +4,7 @@ _For a high-level summary, view the presentation. For a detailed breakdown, plea
 
 Addressing the challenges of a mid-sized NBFC's inefficient and generic loan collection process, this project introduces a **closed-loop, AI-powered ecosystem** designed to make collections **proactive** and **customer-centric**.
 
-Live Demo Link: [https://huggingface.co/spaces/Dhriti04/FinBot-live-demo](url)
+Live Demo Link: [https://huggingface.co/spaces/Dhriti04/FinBot-live-demo](https://huggingface.co/spaces/Dhriti04/FinBot-live-demo)
 
 ## Core Pillars of the Solution
 
