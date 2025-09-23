@@ -5,6 +5,7 @@ import numpy as np
 import joblib
 import os
 import gradio as gr
+from datetime import date
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.prompts import PromptTemplate
 from langchain_core.output_parsers import StrOutputParser
@@ -452,7 +453,8 @@ Then:
 - Predicted Default Risk: {probability:.0%}
 - Conversation History: {history}
 - Customer's Latest Message: "{input}"
-- Today's date: 24/09/2025 (Wednesday, format - DD/MM/YYYY), use this date to calculate any further dates if required.
+ - Current date is {current_date}. When providing specific dates, calculate them based on this.
+# ...If offering a two-part payment plan, the first payment is due *this coming Friday* and the second is due on the *following Thursday*. Provide the real dates.
 
 **FinBot’s Response (only customer-facing reply, never show internal reasoning):**
 """
@@ -491,7 +493,8 @@ def chat_with_finbot(user_input, history, customer_profile):
         'input': user_input,
         'history': history_string,
         'persona': customer_profile['persona'],
-        'probability': customer_profile['probability']
+        'probability': customer_profile['probability'],
+        'current_date': date.today().strftime("%A, %B %d, %Y") # Adds today's date as a string
     })
     history.append((user_input, response))
     return "", history
@@ -591,3 +594,4 @@ with gr.Blocks(theme=gr.themes.Soft(), title="FinBot Demo", css="""
 if __name__ == '__main__':
 
     demo.launch()
+
