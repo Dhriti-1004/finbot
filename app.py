@@ -452,6 +452,7 @@ Then:
 - Predicted Default Risk: {probability:.0%}
 - Conversation History: {history}
 - Customer's Latest Message: "{input}"
+- Today's date: 24/09/2025 (Wednesday, format - DD/MM/YYYY), use this date to calculate any further dates if required.
 
 **FinBot’s Response (only customer-facing reply, never show internal reasoning):**
 """
@@ -588,4 +589,5 @@ with gr.Blocks(theme=gr.themes.Soft(), title="FinBot Demo", css="""
     )
 
 if __name__ == '__main__':
+
     demo.launch()
